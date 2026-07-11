@@ -1,0 +1,272 @@
+/* =====================================================================
+   The Grand Royale Theatre - stylesheet
+   Shared by index.html and by program.xsl (the XML program page),
+   so that both pages look like one website.
+   ===================================================================== */
+
+/* ---------- 1. Reset & page basics ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #f4f1ea;
+    color: #2b2b2b;
+    line-height: 1.6;
+}
+
+/* ---------- 2. Header ---------- */
+header {
+    background-color: #6b1220;
+    background-image: linear-gradient(#7d1626, #570e19);
+    color: #f6e7c1;
+    text-align: center;
+    padding: 40px 20px 30px 20px;
+    border-bottom: 5px solid #c9a227;
+}
+
+header h1 {
+    font-size: 2.6em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header .tagline {
+    font-style: italic;
+    color: #e3cfa1;
+    margin-top: 8px;
+    text-align: center;   /* override the justified body paragraphs */
+}
+
+/* ---------- 3. Navigation ---------- */
+nav {
+    background-color: #3c0a12;
+}
+
+nav ul {
+    list-style: none;          /* remove bullets from the nav list */
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;     /* lay the menu out horizontally */
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 30px;
+    color: #f6e7c1;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+}
+
+nav ul li a:hover {            /* pseudo-class */
+    background-color: #c9a227;
+    color: #3c0a12;
+}
+
+/* the page you are currently on stays highlighted, even under the mouse */
+nav ul li a.current,
+nav ul li a.current:hover {
+    background-color: #8e1a2b;
+    color: #f6e7c1;
+}
+
+/* ---------- 4. Layout ---------- */
+main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #ffffff;
+    border: 1px solid #ded6c4;
+    border-radius: 4px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+    color: #6b1220;
+    font-size: 1.6em;
+    border-bottom: 2px solid #c9a227;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #6b1220;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+a {
+    color: #8e1a2b;
+}
+
+a:hover {
+    color: #c9a227;
+}
+
+/* ---------- 5. The cast list ---------- */
+.cast-list {
+    list-style-type: square;
+    margin-left: 25px;
+}
+
+.cast-list li {
+    padding: 4px 0;
+}
+
+.cast-list li strong {
+    color: #6b1220;
+}
+
+/* ---------- 6. Tables (opening times + program) ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table caption {
+    caption-side: top;
+    text-align: left;
+    font-style: italic;
+    color: #7a6f5c;
+    padding-bottom: 8px;
+}
+
+th {
+    background-color: #6b1220;
+    color: #f6e7c1;
+    text-align: left;
+    padding: 10px 12px;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e5ded0;
+}
+
+/* zebra striping - shows off a structural pseudo-class */
+tbody tr:nth-child(even) {
+    background-color: #faf7f0;
+}
+
+tbody tr:hover {
+    background-color: #f3e9d6;
+}
+
+td.closed {
+    color: #a33;
+    font-style: italic;
+}
+
+/* ---------- 7. Contact area ---------- */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-box {
+    flex: 1 1 250px;
+    background-color: #faf7f0;
+    border-left: 4px solid #c9a227;
+    padding: 15px 18px;
+}
+
+.contact-box address {
+    font-style: normal;
+    line-height: 1.7;
+}
+
+.contact-line {
+    text-align: left;
+    margin-bottom: 6px;
+}
+
+.contact-line .label {
+    font-weight: bold;
+    color: #6b1220;
+}
+
+/* ---------- 8. Program page extras (used by program.xsl) ---------- */
+.price {
+    text-align: right;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.genre {
+    display: inline-block;
+    background-color: #6b1220;
+    color: #f6e7c1;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #7a6f5c;
+    font-style: italic;
+}
+
+/* ---------- 9. Footer ---------- */
+footer {
+    background-color: #3c0a12;
+    color: #e3cfa1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+footer p {
+    text-align: center;   /* override the justified body paragraphs */
+    margin-bottom: 0;
+}
+
+footer a {
+    color: #c9a227;
+}
+
+/* ---------- 10. Small screens ---------- */
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul li a {
+        padding: 12px 16px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    .contact-grid {
+        display: block;
+    }
+
+    .contact-box {
+        margin-bottom: 15px;
+    }
+}

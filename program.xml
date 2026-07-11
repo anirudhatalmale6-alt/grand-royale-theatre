@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This line tells the browser to transform the XML with our XSL stylesheet,
+     so the program is displayed as a proper HTML table. -->
+<?xml-stylesheet type="text/xsl" href="program.xsl"?>
+
+<!-- The document is validated against the external DTD "program.dtd".
+     A couple of general entities are declared here in the internal subset
+     so that they can be reused as shortcuts inside the document. -->
+<!DOCTYPE program SYSTEM "program.dtd" [
+    <!ENTITY theatre  "The Grand Royale Theatre">
+    <!ENTITY interval "Includes one 20-minute interval">
+]>
+
+<program year="2026">
+
+    <season>Autumn / Winter Season at &theatre;</season>
+
+    <show id="s01" genre="Drama" stage="Main">
+        <title>Macbeth</title>
+        <description>Shakespeare's darkest tragedy, staged in the round. &interval;.</description>
+        <director>Helen Ashcroft</director>
+        <cast>
+            <actor role="Lady Macbeth">Eleanor Hargreaves</actor>
+            <actor role="Macbeth">Thomas Whitfield</actor>
+            <actor role="Banquo">Daniel Okoye</actor>
+        </cast>
+        <date>Fri 02 Oct 2026</date>
+        <time>19:30</time>
+        <duration>2h 40m</duration>
+        <price currency="GBP" concession="18.00">24.00</price>
+    </show>
+
+    <show id="s02" genre="Comedy" stage="Studio">
+        <title>The Importance of Being Earnest</title>
+        <description>Wilde's sparkling comedy of manners, performed in our intimate studio space.</description>
+        <director>Marcus Delaney</director>
+        <cast>
+            <actor role="Gwendolen">Priya Raman</actor>
+            <actor role="Algernon">Thomas Whitfield</actor>
+        </cast>
+        <date>Sat 17 Oct 2026</date>
+        <time>19:00</time>
+        <duration>2h 10m</duration>
+        <price currency="GBP" concession="12.50">17.50</price>
+    </show>
+
+    <show id="s03" genre="Drama" stage="Main">
+        <title>A Doll's House</title>
+        <description>Ibsen's landmark drama about a marriage coming quietly apart. &interval;.</description>
+        <director>Helen Ashcroft</director>
+        <cast>
+            <actor role="Nora">Priya Raman</actor>
+            <actor role="Torvald">Daniel Okoye</actor>
+        </cast>
+        <date>Thu 05 Nov 2026</date>
+        <time>19:30</time>
+        <duration>2h 30m</duration>
+        <price currency="GBP" concession="16.00">22.00</price>
+    </show>
+
+    <show id="s04" genre="Concert" stage="Main">
+        <title>An Evening of Chopin</title>
+        <description>A solo piano recital of nocturnes, waltzes and the Ballade No. 1.</description>
+        <director>Sofia Marchetti</director>
+        <date>Sun 22 Nov 2026</date>
+        <time>15:00</time>
+        <duration>1h 30m</duration>
+        <price currency="GBP" concession="10.00">15.00</price>
+    </show>
+
+    <show id="s05" genre="Musical" stage="Main">
+        <title>Cabaret</title>
+        <description>The Kit Kat Klub comes to King Street. Contains adult themes. &interval;.</description>
+        <director>Marcus Delaney</director>
+        <cast>
+            <actor role="Sally Bowles">Eleanor Hargreaves</actor>
+            <actor role="Emcee">Daniel Okoye</actor>
+            <actor role="Musical Director">Sofia Marchetti</actor>
+        </cast>
+        <date>Fri 04 Dec 2026</date>
+        <time>19:30</time>
+        <duration>2h 45m</duration>
+        <price currency="GBP" concession="21.00">28.00</price>
+    </show>
+
+    <show id="s06" genre="Family" stage="Main">
+        <title>Jack and the Beanstalk</title>
+        <description>Our traditional Christmas pantomime. Oh yes it is! Suitable for all ages.</description>
+        <director>Marcus Delaney</director>
+        <cast>
+            <actor role="Jack">Priya Raman</actor>
+            <actor role="Dame Trott">Thomas Whitfield</actor>
+        </cast>
+        <date>Sat 19 Dec 2026</date>
+        <time>14:00</time>
+        <duration>2h 00m</duration>
+        <price currency="GBP" concession="9.50">14.00</price>
+    </show>
+
+</program>

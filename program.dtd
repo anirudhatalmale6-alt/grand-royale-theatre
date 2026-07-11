@@ -1,0 +1,52 @@
+<!-- =====================================================================
+     program.dtd
+     Document Type Definition for the theatre program (program.xml).
+     It defines which elements and attributes are allowed, in what order,
+     and how many times each one may appear.
+     ===================================================================== -->
+
+<!-- The root element: one season heading, followed by one or more shows -->
+<!ELEMENT program (season, show+)>
+<!ATTLIST program
+          year    CDATA   #REQUIRED>
+
+<!-- The name of the current season, e.g. "Autumn / Winter Season" -->
+<!ELEMENT season (#PCDATA)>
+
+<!-- A single production.
+     The child elements must appear in exactly this order.
+     "cast" is optional (?) because a concert may not have a cast list. -->
+<!ELEMENT show (title, description, director, cast?, date, time, duration, price)>
+
+<!-- Attributes of a show:
+       id       - unique identifier (ID type, must be unique in the document)
+       genre    - restricted to a fixed list of values (enumerated type)
+       stage    - which auditorium; defaults to "Main" if it is left out -->
+<!ATTLIST show
+          id      ID                                        #REQUIRED
+          genre   (Drama|Comedy|Musical|Family|Concert)     #REQUIRED
+          stage   (Main|Studio)                             "Main">
+
+<!-- Simple text-only elements -->
+<!ELEMENT title       (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT director    (#PCDATA)>
+<!ELEMENT date        (#PCDATA)>
+<!ELEMENT time        (#PCDATA)>
+<!ELEMENT duration    (#PCDATA)>
+
+<!-- A cast is made up of one or more actors (+ = one or more) -->
+<!ELEMENT cast (actor+)>
+
+<!-- The "role" attribute is optional (#IMPLIED) -->
+<!ELEMENT actor (#PCDATA)>
+<!ATTLIST actor
+          role    CDATA   #IMPLIED>
+
+<!-- Ticket price.
+       currency    - defaults to GBP when it is not given
+       concession  - optional reduced price for students / seniors -->
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price
+          currency    CDATA   "GBP"
+          concession  CDATA   #IMPLIED>
